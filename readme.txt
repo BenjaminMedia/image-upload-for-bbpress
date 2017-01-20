@@ -1,10 +1,10 @@
 === Inline Image Upload for BBPress ===
-Contributors: hearken
-Donate link: https://potentplugins.com/donate/?utm_source=image-upload-for-bbpress&utm_medium=link&utm_campaign=wp-plugin-readme-donate-link
+Contributors: hearken, alfhen
+Original creator link: https://potentplugins.com/
 Tags: bbpress, image, images, inline, media
 Requires at least: 3.5
 Tested up to: 4.7
-Stable tag: 1.1.11
+Stable tag: 1.1.12
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,20 +13,8 @@ Upload inline images to BBPress forum topics and replies.
 == Description ==
 
 This plugin enables the TinyMCE WYSIWYG editor for BBPress forum topics and replies and adds a button to the editor's "Insert/edit image" dialog that allows forum users to upload images from their computer and insert them inline into their posts.
-
-A [pro version](http://potentplugins.com/downloads/image-upload-for-bbpress-pro-wordpress-plugin/?utm_source=image-upload-for-bbpress&utm_medium=link&utm_campaign=wp-repo-upgrade-link) with the following additional features is also available:
-
-* Change the directory where uploaded images are stored.
-* Limit which user roles are permitted to upload images.
-* Limit the number of uploaded images allowed per post.
-* Automatically downsize images to fit specified maximum dimensions.
-* Convert all uploaded images to the same image format, if desired.
-* Set PNG and JPEG compression levels so images take up less disk space.
-* Allow users to view enlarged images in a lightbox by clicking on them within the post.
-* View total image count and file size statistics.
-* Use [Amazon S3™](https://aws.amazon.com/s3/) to store and serve uploaded images in submitted forum posts (optional; requires [add-on plugin](https://potentplugins.com/downloads/s3-image-storage-bbpress/?utm_source=image-upload-for-bbpress&utm_medium=link&utm_campaign=wp-repo-upgrade-link) purchase).
-
-Amazon Web Services, the "Powered by Amazon Web Services" logo, AWS, Amazon Simple Storage Service, and Amazon S3 are trademarks of Amazon.com, Inc. or its affiliates in the United States and/or other countries. Potent Plugins is not affiliated with Amazon.com, Inc. or Amazon Web Services.
+This fork tweaks the plugin so images are stored as attachments and are thus visible in media library.
+Images are not removed from the media library when you delete them from the posts.
 
 == Installation ==
 
@@ -45,6 +33,9 @@ Alternatively, you can manually upload the plugin to your wp-content/plugins dir
 2. The Browse button in the Image dialog, which allows the user to select and upload an image from their computer for inline insertion into their forum topic or reply.
 
 == Changelog ==
+
+= 1.1.12 =
+* Changed plugin to upload files as attachments on posts
 
 = 1.1.11 =
 * Fixed unnecessary creation of revision when saving forum post

@@ -1,0 +1,32 @@
+{
+  "name": "bonnier/image-upload-for-bbpress",
+  "description": "Upload inline images to BBPress forum topics and replies.",
+  "type": "wordpress-plugin",
+  "keywords": ["wordpress", "plugin", "bbpress"],
+  "homepage": "https://github.com/BenjaminMedia/image-upload-for-bbpress",
+  "repositories":[
+    {
+      "type": "composer",
+      "url": "http://wpackagist.org"
+    }
+  ],
+  "authors": [
+    {
+      "name": "Bonnier Publications",
+      "email": "interactive@bonnier.dk",
+      "homepage": "http://bonnierpublications.com"
+    },
+    {
+      "name": "Nicklas Frank",
+      "email": "nicklas.frank@bonnier.dk",
+      "homepage": ""
+    }
+  ],
+  "support": {
+    "issues": "https://github.com/BenjaminMedia/image-upload-for-bbpress/issues",
+    "source": "https://github.com/BenjaminMedia/image-upload-for-bbpress"
+  },
+  "require": {
+    "php": ">=5.6"
+  }
+}

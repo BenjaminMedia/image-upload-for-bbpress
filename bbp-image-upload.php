@@ -115,22 +115,15 @@ function hm_bbpui_handle_upload() {
     // Try to increase memory limit
     @ini_set('memory_limit', '256M');
 
+    $remove_tmp = str_replace('/tmp/', '', $_FILES['hm_bbpui_file']['tmp_name']);
+
     // Save as an image file (for security reasons)
     switch (strtolower($_FILES['hm_bbpui_file']['type'])) {
         case 'image/jpeg':
-            $img = imagecreatefromjpeg($_FILES['hm_bbpui_file']['tmp_name']) or hm_bbpui_upload_error();
-            $img = bbpui_apply_exif_rotation($img, $_FILES['hm_bbpui_file']['tmp_name']) or hm_bbpui_upload_error();
-            imagejpeg($img, $tempUploadDir.'/'.$tempName) or hm_bbpui_upload_error();
-            break;
         case 'image/png':
-            $img = imagecreatefrompng($_FILES['hm_bbpui_file']['tmp_name']) or hm_bbpui_upload_error();
-            imagesavealpha($img, true) or hm_bbpui_upload_error();
-            imagealphablending($img, false) or hm_bbpui_upload_error();
-            imagepng($img, $tempUploadDir.'/'.$tempName) or hm_bbpui_upload_error();
-            break;
         case 'image/gif':
-            $img = imagecreatefromgif($_FILES['hm_bbpui_file']['tmp_name']) or hm_bbpui_upload_error();
-            imagegif($img, $tempUploadDir.'/'.$tempName) or hm_bbpui_upload_error();
+            move_uploaded_file($_FILES['hm_bbpui_file']['tmp_name'], $tempUploadDir.'/'.$remove_tmp);
+            rename($tempUploadDir.'/'.$remove_tmp, $tempUploadDir.'/'.$tempName);
             break;
         default:
             ($img = imagecreatefromjpeg($_FILES['hm_bbpui_file']['tmp_name']) && bbpui_apply_exif_rotation($img, $_FILES['hm_bbpui_file']['tmp_name']) && imagejpeg($img, $tempUploadDir.'/'.$tempName)) or

@@ -117,6 +117,10 @@ function hm_bbpui_handle_upload() {
 
     $removeTmp = str_replace('/tmp/', '', $_FILES['hm_bbpui_file']['tmp_name']);
 
+    if (@getimagesize($_FILES['hm_bbpui_file'])) {
+        hm_bbpui_upload_error();
+    }
+
     // Save as an image file (for security reasons)
     switch (strtolower($_FILES['hm_bbpui_file']['type'])) {
         case 'image/jpeg':

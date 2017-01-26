@@ -34,7 +34,7 @@ Alternatively, you can manually upload the plugin to your wp-content/plugins dir
 
 == Changelog ==
 = 1.1.14 =
-* Fixed removal of EXIF data on images when uploading to tmp folder
+* Fixed removal of EXIF data when uploading to tmp folder
 
 = 1.1.13 =
 * Added composer support
